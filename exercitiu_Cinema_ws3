@@ -1,0 +1,59 @@
+class Cinema:
+    nume = "Iulius"
+    adresa = "Calea Victoriei nr 20"
+    nr_sali = 5
+    nr_locuri_sala = 20
+    snack_bar = True
+    case_bilete_deschise = None
+    nr_angajati = 20
+    ora_curenta = "16:00"
+    orar = "Z:Luni-Duminica/ H:14:00 - 24:00"
+    nr_filme_2D = 10
+    nr_filme_3D = 15
+    numar_bilete_vandute = 70
+    tip_client = "adult"
+    pret_bilet = 20
+
+# def __init__(self, nume)
+# voi face o metoda care sa modifice nr de case_bilete_deschise;
+
+    def print_nr_case_deschise(self):
+        print(self.case_bilete_deschise)
+    def schimbare_nr_case_deschise(self, case_bilete_deschise):
+       self.case_bilete_deschise = case_bilete_deschise
+# ca sa pot rula metodele, voi instantia un obiect din clasa Cinema
+cinema1 = Cinema()
+cinema1.print_nr_case_deschise()
+cinema1.schimbare_nr_case_deschise(6)
+cinema1.print_nr_case_deschise()
+# daca ora curenta este mai mica de 19:00 atunci nr case <=2  else >2 <=4
+
+def __init__(self, ora_curenta, case_bilete_deschise):
+        self.ora_curenta = ora_curenta
+        if int(ora_curenta[0:2]) <= 19 and case_bilete_deschise > 2:
+            print("In timpul programului de zi, sunt deschise maxim 2 case")
+        elif int(ora_curenta[0:2]) <= 19 and case_bilete_deschise < 1:
+            print("Trebuie minim o casa deschisa")
+        elif int(ora_curenta[0:2]) <= 19 and case_bilete_deschise <=2:
+            self.case_bilete_deschise = case_bilete_deschise
+        elif int(ora_curenta[0:2]) > 19 and case_bilete_deschise < 2:
+            print("In timpul programului de seara, sunt deschise minim 2 case")
+        elif int(ora_curenta[0:2]) > 19 and case_bilete_deschise > 4:
+            print("Nu avem mai mult de 4 case disponibile")
+        else:
+            self.case_bilete_deschise = case_bilete_deschise
+
+# daca esti student ai reducere 10% copii 50%, seniori 30%
+def calcul_pret(self, tip_client, pret_bilet):
+    self.tip_client = tip_client
+    if tip_client == "student":
+        self.pret_bilet = int(pret_bilet) * 0.9
+    elif tip_client == "copil":
+        self.pret_bilet = int(pret_bilet)/2
+    elif tip_client == "senior":
+        self.pret_bilet = int(pret_bilet) * 0.7
+    elif tip_client == "adult":
+        self.pret_bilet = pret_bilet
+    else:
+        print("tip client neacceptat")
+    return self.pret_bilet
